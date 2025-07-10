@@ -103,4 +103,4 @@ This project is created as a **learning exercise** to strengthen your grasp of C
 ---
 
 ## 🔗 License
-
+This project is listed under MIT license(by Github)
