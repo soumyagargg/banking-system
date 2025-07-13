@@ -162,5 +162,27 @@ void Withdraw(struct Account accounts[],int count)
         printf("Insufficient balance! \n");
 
     }
-    
+
 }
+
+
+void Display(struct Account accounts[],int count)
+{
+    int accNumber;
+    printf("enter account number : \n");
+    scanf("%d", &accNumber);
+    
+    int Index = FindAcc(accounts,count,accNumber);
+
+    if (Index == -1)
+    {
+        printf("Account not found! \n");
+        return;
+    }
+    printf("---\n Account Details ----\n");
+    printf("Name : %s\n", accounts[Index].name);
+    printf("Account number : %d\n", accounts[Index].accNumber);
+    printf("current balance : %.2f\n", accounts[Index].balance);
+
+}
+
