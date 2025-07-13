@@ -23,7 +23,7 @@ int main()
     while(1)
     {
         printf("\n---Bank Management System---\n");
-        printf("1. Add Account \n ");
+        printf("1. Add Account \n");
         printf("2.Deposit Money \n");
         printf("3. Withdraw Money \n");
         printf("4. Display account details \n");
@@ -47,11 +47,12 @@ int main()
             Display(accounts, count);
             break;
             case 5:
-            deleteAccount(accounts, count);
+            deleteAccount(accounts, &count);
             break;
             case 6:
             printf("Exiting now!\n");
             printf("👏Thank you!\n");
+            return 0;
             break;
             default:
             printf("Wrong choice❌. Pls try again\n");
@@ -197,7 +198,7 @@ void deleteAccount(struct Account accounts[],int *count)
     printf("enter account number : \n");
     scanf("%d", &accNumber);
     
-    int Index = FindAcc(accounts,count,accNumber);
+    int Index = FindAcc(accounts,*count,accNumber);
 
     if (Index == -1)
     {
@@ -212,8 +213,8 @@ void deleteAccount(struct Account accounts[],int *count)
     }
 
     (*count)--;
-    print("account closed successfully! \n");
-    
+    printf("account closed successfully! \n");
+
 }
 
 int FindAcc(struct Account accounts[],int count,int accNumber)
