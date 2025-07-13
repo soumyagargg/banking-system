@@ -47,12 +47,49 @@ int main()
             break;
             case 5:
             printf("Exiting now!\n");
-            printf("👏Thank you!");
+            printf("👏Thank you!\n");
             break;
             default:
-                printf("Wrong choice❌. Pls try again");
+            printf("Wrong choice❌. Pls try again\n");
             }
+
+
+
     }
 
         return 0;
+}
+
+void createAccount(struct Account accounts[],int *count) 
+{
+    if (*count >= 50)
+    {
+        printf("Account's limit has reached!");
+        return;
+
+    }
+    else
+    {
+        printf("what is your name : \n");
+        scanf(" %[^\n]", accounts[*count].name);
+
+        printf("Enter your accout number : \n");
+        scanf("%d", &accounts[*count].accNumber);
+
+        // checking for duplication of acc number
+        for (int i = 0; i < *count; i++)
+        {
+            if (accounts[i].accNumber == accounts[*count].accNumber)
+            {
+                printf("Entered account number already exists!");
+
+            }
+        }
+        printf("enter the initial balance : \n");
+        scanf("%f", &accounts[*count].balance);
+
+        printf("Congrats! \n");
+        printf("Account created successfully \n");
+        (*count)++;
+    }
 }
