@@ -24,7 +24,7 @@ int main()
     {
         printf("\n---Bank Management System---\n");
         printf("1. Add Account \n");
-        printf("2.Deposit Money \n");
+        printf("2. Deposit Money \n");
         printf("3. Withdraw Money \n");
         printf("4. Display account details \n");
         printf("5. Close or delete account \n");
@@ -126,8 +126,8 @@ void Deposit(struct Account accounts[],int count)
     }
     accounts[Index].balance += amount;
     printf("Amount deposited successfully.\n");
+    printf("new balance : %.2f\n", accounts[Index].balance);
 }
-
 
 void Withdraw(struct Account accounts[],int count)
 {
@@ -184,7 +184,7 @@ void Display(struct Account accounts[],int count)
         printf("Account not found! \n");
         return;
     }
-    printf("---\n Account Details ----\n");
+    printf("\n--- Account Details ----\n");
     printf("Name : %s\n", accounts[Index].name);
     printf("Account number : %d\n", accounts[Index].accNumber);
     printf("current balance : %.2f\n", accounts[Index].balance);
