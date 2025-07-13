@@ -9,19 +9,19 @@ This project helps you understand basic C programming concepts like **structures
 
 ## 🚀 Features
 
-* 📌 **Create a New Account**
+*  **Create a New Account**
 
   * Add a customer’s name, account number, and opening balance.
-* 💰 **Deposit Money**
+*  **Deposit Money**
 
   * Add money to an existing account.
-* 💸 **Withdraw Money**
+*  **Withdraw Money**
 
   * Withdraw money with a balance check to prevent overdrafts.
-* 📄 **Display Account Details**
+*  **Display Account Details**
 
   * View account holder’s name, account number, and current balance.
-
+* **Deletion or Close an account**
 ---
 
 ## 🔧 How It Works
@@ -32,36 +32,6 @@ The program uses:
 * An **array of structures** to store multiple accounts.
 * Functions to perform **create**, **deposit**, **withdraw**, and **display** operations.
 * A **menu-driven loop** with `switch-case` to interact with the user.
-
----
-
-## 📂 Project Structure
-
-```
-SimpleBankManagementSystem/
-│
-├── bank.c          # Main source code file
-├── README.md       # This documentation file
-└── (optional) bank.exe or compiled output
-```
-
----
-
-## ⚙️ How to Compile & Run
-
-1️⃣ **Compile**
-
-```bash
-gcc bank.c -o bank
-```
-
-2️⃣ **Run**
-
-```bash
-./bank
-```
-
-*(On Windows: `bank.exe`)*
 
 ---
 
@@ -88,7 +58,7 @@ struct Account {
 
 ---
 
-## 📣 Author
+## 📣 Author (Soumya Garg)
 
 This project is created as a **learning exercise** to strengthen your grasp of C programming fundamentals.
 
