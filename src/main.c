@@ -19,6 +19,19 @@ int main()
     struct Account accounts[50];
     int count = 0; // temp var to count acoounts
     int choice;
-    
-    return 0;
+
+    while(1)
+    {
+        printf("\n---Bank Management System---\n");
+        printf("1. Add Account \n ");
+        printf("2.Deposit Money \n");
+        printf("3. Withdraw Money \n");
+        printf("4. Display account details \n");
+        printf("5. Exit \n");
+        printf("Enter your choice : ");
+        scanf("%d", &choice);
+        
+    }
+
+        return 0;
 }
