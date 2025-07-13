@@ -11,8 +11,8 @@ void createAccount(struct Account accounts[],int *count);
 void Deposit(struct Account accounts[],int count);
 void Withdraw(struct Account accounts[],int count);
 void Display(struct Account accounts[],int count);
-int FindAcc(struct Account accounts[],int count,int accNUmber);
-
+int FindAcc(struct Account accounts[],int count,int accNumber);
+void deleteAccount(struct Account accounts[],int *count);
 
 int main()
 {
@@ -27,7 +27,8 @@ int main()
         printf("2.Deposit Money \n");
         printf("3. Withdraw Money \n");
         printf("4. Display account details \n");
-        printf("5. Exit \n");
+        printf("5. Close or delete account \n");
+        printf("6. Exit \n");
         printf("Enter your choice : ");
         scanf("%d", &choice);
 
@@ -46,6 +47,9 @@ int main()
             Display(accounts, count);
             break;
             case 5:
+            deleteAccount(accounts, count);
+            break;
+            case 6:
             printf("Exiting now!\n");
             printf("👏Thank you!\n");
             break;
@@ -185,4 +189,45 @@ void Display(struct Account accounts[],int count)
     printf("current balance : %.2f\n", accounts[Index].balance);
 
 }
+
+
+void deleteAccount(struct Account accounts[],int *count)
+{
+    int accNumber;
+    printf("enter account number : \n");
+    scanf("%d", &accNumber);
+    
+    int Index = FindAcc(accounts,count,accNumber);
+
+    if (Index == -1)
+    {
+        printf("Account not found! \n");
+        return;
+    }
+
+    for (int i = Index; i < *count - 1; i++)
+    {
+        accounts[i] = accounts[i + 1];
+
+    }
+
+    (*count)--;
+    print("account closed successfully! \n");
+    
+}
+
+int FindAcc(struct Account accounts[],int count,int accNumber)
+{
+    for (int i = 0; i < count; i++)
+    {
+        if (accounts[i].accNumber == accNumber)
+        {
+            return i;
+
+        }
+    }
+    return -1;
+
+}
+
 
