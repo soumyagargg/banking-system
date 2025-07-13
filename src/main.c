@@ -122,3 +122,45 @@ void Deposit(struct Account accounts[],int count)
     accounts[Index].balance += amount;
     printf("Amount deposited successfully.\n");
 }
+
+
+void Withdraw(struct Account accounts[],int count)
+{
+    int accNumber;
+    float amount;
+    printf("enter account number : \n");
+    scanf("%d", &accNumber);
+    
+    int Index = FindAcc(accounts,count,accNumber);
+
+    if (Index == -1)
+    {
+        printf("Account not found! \n");
+        return;
+
+    }
+
+    printf("Enter amount to withdraw : \n");
+    scanf("%f", &amount);
+
+    if (amount <= 0)
+    {
+        printf("invalid amount! \n");
+        return;
+
+    }
+
+    if ( accounts[Index].balance >= amount )
+    {
+        accounts[Index].balance -= amount;
+        printf("Withdrwalal successfull! \n");
+        printf("New balance : %.2f\n", accounts[Index].balance);
+
+    }
+    else
+    {
+        printf("Insufficient balance! \n");
+
+    }
+    
+}
