@@ -11,7 +11,7 @@ void createAccount(struct Account accounts[],int *count);
 void Deposit(struct Account accounts[],int count);
 void Withdraw(struct Account accounts[],int count);
 void Display(struct Account accounts[],int count);
-void FindAcc(struct Account accounts[],int count,int accNUmber);
+int FindAcc(struct Account accounts[],int count,int accNUmber);
 
 
 int main()
@@ -92,4 +92,33 @@ void createAccount(struct Account accounts[],int *count)
         printf("Account created successfully \n");
         (*count)++;
     }
+}
+
+void Deposit(struct Account accounts[],int count)
+{
+    int accNumber;
+    float amount;
+
+    printf("enter account number : \n");
+    scanf("%d", &accNumber);
+    int Index = FindAcc(accounts,count,accNumber);
+
+    if (Index == -1)
+    {
+        printf("Account not found! \n");
+        return;
+
+    }
+
+    printf("Enter amount to deposit : \n");
+    scanf("%f", &amount);
+
+    if (amount <= 0)
+    {
+        printf("invalid amound.\n");
+        return;
+
+    }
+    accounts[Index].balance += amount;
+    printf("Amount deposited successfully.\n");
 }
